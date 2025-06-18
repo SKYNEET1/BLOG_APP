@@ -6,6 +6,7 @@ import { IoIosGlobe } from 'react-icons/io'
 import { LuMenu } from 'react-icons/lu'
 import { RxCross2 } from 'react-icons/rx'
 import Login from './Login'
+import { IoStorefrontOutline } from "react-icons/io5";
 
 function Header() {
 
@@ -17,7 +18,7 @@ function Header() {
       <div id='nav-bar' className='bg-gray-800 flex justify-between items-center text-white p-6 h-24 w-full fixed top-0 left-0 z-50 text-xl font-medium'>
         <div id='logo' className='font-bold'>
           <Link to='/'>Blog <span className='text-orange-500'>Stories</span></Link>
-        </div>
+        </div>  
         <div id='nav-links' className='hidden md:flex '>
           <ul className='flex space-x-10'>
             {navItems.map((element) => (
@@ -30,6 +31,7 @@ function Header() {
             ))}
           </ul>
         </div>
+        <Link to={'/readlatter'}><div><IoStorefrontOutline className='hover:text-green-500 cursor-pointer transition-all text-md ' /></div></Link>
         <div className='hidden lg:flex space-x-4 items-center'>
           <div className='flex space-x-3'>
             <FaFacebook className='hover:text-orange-500 cursor-pointer transition-all text-md' />
@@ -65,6 +67,7 @@ function Header() {
                   <li key={element.id}>
                     <NavLink 
                       to={element.path}
+                      // No need to make the code more lengthy so i created a object where path is already defined
                       className={({isActive}) => `font-semibold text-lg hover:text-orange-500 transition-all ${isActive ? `text-orange-500` : `text-gray-900`}`}
                     >{element.label}</NavLink>
                   </li>

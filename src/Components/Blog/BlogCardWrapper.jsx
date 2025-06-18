@@ -1,3 +1,4 @@
+// all category
 import React from 'react'
 import blogsData from '../../utils/blogsData.json'
 import BlogCard from './BlogCard'

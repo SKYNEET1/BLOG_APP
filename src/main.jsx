@@ -9,6 +9,9 @@ import Blog from './Components/Blog/Blog.jsx'
 import Services from './Components/Services/Services.jsx'
 import Contact from './Components/Contact/Contact.jsx'
 import BlogPage from './Components/Blog/BlogPage.jsx'
+import { Provider } from 'react-redux'
+import { store } from './Redux/store/Store.jsx'
+import Readlatter from './Components/ReadLatter/Readlatter.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements (
@@ -19,12 +22,15 @@ const router = createBrowserRouter(
       <Route path='services' element={<Services />}/>
       <Route path='contact' element={<Contact />}/>
       <Route path='about' element={<About />}/>
+      <Route path='readlatter' element={<Readlatter/>}/>
     </Route>
   )
 )
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Provider store={store}>
     <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )

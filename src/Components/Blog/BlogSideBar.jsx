@@ -11,6 +11,7 @@ function BlogSideBar() {
           <div key={item.id} className='border-b-2 border-gray-200 py-3'>
             <h3 className='font-semibold text-md mb-2'>{item.title}</h3>
             <Link to={`/blog/${item.id}`} className='hover:text-orange-500 transition-all'>Read more →</Link>
+            {/* redirect to blog page as route declared in main.jsx */}
           </div>
         ))}
       </div>

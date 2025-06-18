@@ -1,33 +1,43 @@
 import React from 'react'
 
-function Login({loginDialog, setLoginDialog}) {
+function Login({ loginDialog, setLoginDialog }) {
   return (
-    <div className='z-[99] bg-purple-900 rounded-md text-gray-100 max-w-[480px] w-full px-10 py-16 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-      <div className='flex flex-col text-center'>
-        <h3 className='mb-5 font-semibold text-3xl'>Please Login Here</h3>
-        <form className='flex flex-col space-y-5' onSubmit={(e) => {
-          e.preventDefault();
-        }}>
-          <input 
-            type="email" 
-            name="email" 
-            id="email" 
-            placeholder='example@gmail.com'
-            className='border-none outline-none rounded-md px-5 py-3 text-gray-900'
+    <div className='z-[99] bg-white rounded-lg shadow-2xl text-gray-800 max-w-[400px] w-full px-8 py-12 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+      <div className='flex flex-col items-center'>
+        <h3 className='mb-6 font-bold text-2xl text-gray-700'>Login to Your Account</h3>
+        <form
+          className='flex flex-col space-y-4 w-full'
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder='Email address'
+            className='border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-md px-4 py-2 outline-none'
           />
-          <input 
-            type="text" 
-            name='name' 
-            id='name' 
-            placeholder='Enter your name'
-            className='border-none outline-none rounded-md px-5 py-3 text-gray-900'
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder='Your name'
+            className='border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-md px-4 py-2 outline-none'
           />
-          <button className='bg-orange-500 hover:bg-orange-700 transition-all py-3 rounded-md font-semibold text-lg'>Login</button>
+          <button
+            type="submit"
+            className='bg-blue-500 hover:bg-blue-600 transition-all text-white py-2 rounded-md font-medium'
+          >
+            Login
+          </button>
         </form>
         <button
           onClick={() => setLoginDialog(false)}
-          className='bg-purple-400 mt-5 rounded-md py-3 hover:bg-purple-500 transition-all font-semibold text-lg'
-        >Close</button>
+          className='mt-4 text-sm text-blue-500 hover:underline'
+        >
+          Close
+        </button>
       </div>
     </div>
   )
